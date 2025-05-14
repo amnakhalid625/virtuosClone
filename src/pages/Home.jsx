@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import homeBg from '../assets/images/deskbg.webp';
-import mobileBg from '../assets/images/mobile-bg.webp'; 
+import mobileBg from '../assets/images/mobile-bg.webp';
 import tankImg from '../assets/images/tank.webp';
 import textImg from '../assets/images/homeText.webp';
 import smokeImg from '../assets/images/smoke.webp';
@@ -31,12 +31,24 @@ const Home = () => {
           <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
         </div>
 
-        {/* Centered Text - Different positioning for mobile */}
-        <div className="absolute inset-0 flex items-center justify-center md:justify-center z-30">
+        {/* Tank Image - Now above text on mobile */}
+        <img
+          src={tankImg}
+          alt="tank"
+          className="absolute z-40 
+                    left-1/2 transform -translate-x-1/2 
+                    top-[30%] md:top-1/3 md:bottom-[35%] 
+                    w-[150px] md:w-[200px] 
+                    md:right-[13%] md:left-auto"
+        />
+
+        {/* Centered Text - Below tank on mobile */}
+        <div className="absolute inset-0 flex items-center justify-center z-30">
           <img
             src={textImg}
             alt="WE MAKE GAMES BETTER TOGETHER"
-            className="w-[80%] max-w-[450px] md:w-[450px] mt-20 md:mt-0"
+            className="w-[80%] max-w-[450px] md:w-[450px] 
+                      mt-40 md:mt-0 "  /* Increased top margin for mobile */
           />
         </div>
 
@@ -53,13 +65,6 @@ const Home = () => {
             className="absolute top-1/4 right-1/4 w-[250px] opacity-40 mix-blend-overlay z-10"
           />
         </div>
-
-        {/* Tank Image - Smaller and repositioned on mobile */}
-        <img
-          src={tankImg}
-          alt="tank"
-          className="absolute right-[10%] md:right-[22%] top-[40%] md:top-[45%] transform -translate-y-1/2 w-[120px] md:w-[200px] z-25 mix-blend-overlay"
-        />
 
         {/* Bottom Smoke - Hidden on mobile */}
         <div className="hidden md:block">
