@@ -6,6 +6,7 @@ import tankImg from '../assets/images/tank.webp';
 import textImg from '../assets/images/homeText.webp';
 import smokeImg from '../assets/images/smoke.webp';
 import smokeSecondImg from '../assets/images/smokeRight.webp';
+import About from './About';
 
 const Home = () => {
   return (
@@ -79,6 +80,10 @@ const Home = () => {
           />
         </div>
       </div>
+
+
+
+      <About />
     </>
   );
 };
