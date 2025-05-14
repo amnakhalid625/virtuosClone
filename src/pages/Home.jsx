@@ -42,7 +42,6 @@ const Home = () => {
                     md:right-[13%] md:left-auto"
         />
 
-        {/* Centered Text - Below tank on mobile */}
         <div className="absolute inset-0 flex items-center justify-center z-30">
           <img
             src={textImg}
