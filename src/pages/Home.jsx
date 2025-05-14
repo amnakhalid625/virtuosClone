@@ -14,7 +14,7 @@ const Home = () => {
 
       {/* Background Section */}
       <div className="relative h-screen w-full overflow-hidden">
-        {/* Background images for different devices */}
+        {/* Background images for small devices */}
         <div className="absolute inset-0">
           {/* Desktop Background */}
           <div 
@@ -47,7 +47,7 @@ const Home = () => {
             src={textImg}
             alt="WE MAKE GAMES BETTER TOGETHER"
             className="w-[80%] max-w-[450px] md:w-[450px] 
-                      mt-40 md:mt-0 "  /* Increased top margin for mobile */
+                      mt-40 md:mt-0 "  
           />
         </div>
 
