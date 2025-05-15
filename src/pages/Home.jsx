@@ -8,6 +8,7 @@ import smokeImg from '../assets/images/smoke.webp';
 import smokeSecondImg from '../assets/images/smokeRight.webp';
 import About from '../components/About';
 import { Video } from '../components/Video';
+import Map from '../components/Map';
 
 const Home = () => {
   return (
@@ -86,6 +87,7 @@ const Home = () => {
 
       <About />
       <Video />
+      <Map />
     </>
   );
 };

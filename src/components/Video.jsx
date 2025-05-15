@@ -13,7 +13,7 @@ export const Video = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-[#1a1a1a] to-[#212325]">
+    <div className="flex justify-center items-center min-h-screen bg-transparent bg-[linear-gradient(180deg,_#0D0E0F_0%,_#25282A_100%)]">
       {/* Thumbnail with Play Button */}
       <div className="relative max-w-4xl w-full rounded-xl shadow-2xl overflow-hidden">
         <img
