@@ -9,7 +9,7 @@ const About = () => {
       className="relative w-full bg-cover bg-center bg-no-repeat text-white overflow-x-hidden"
       style={{
         backgroundImage: `url(${dinasor})`,
-        minHeight: '100vh', // Reduced on small screens
+        minHeight: '100vh', 
       }}
     >
       {/* Overlay Image */}
