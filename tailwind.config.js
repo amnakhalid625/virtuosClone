@@ -7,9 +7,19 @@ export default {
   theme: {
     fontFamily: {
       primary: ['"Special Gothic Condensed One"', 'sans-serif'],
-      secondary: ['Rubik', 'sans-serif'], // correctly formatted
+      secondary: ['Rubik', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+    },
   },
   plugins: [],
-}
+};
