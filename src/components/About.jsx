@@ -9,7 +9,7 @@ const About = () => {
       <img
         src={homeoverlay}
         alt="Overlay"
-        className="absolute bottom-0 left-0 w-full h-auto z-0"
+        className="absolute bottom left-0 w-full h-auto z-0 bg-red-500"
       />
 
     <section
@@ -17,8 +17,8 @@ const About = () => {
       className="relative w-full bg-cover bg-center text-white"
       style={{ 
         backgroundImage: `url(${dinasor})`,
-        minHeight: '100vh', // Ensures it takes at least the full viewport height
-        height: 'auto', // Allows the section to grow if content overflows
+        minHeight: '100vh',
+        height: '100vh', 
       }}
     >
     
@@ -26,11 +26,11 @@ const About = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-start justify-center min-h-screen px-6 bg-black bg-opacity-40">
         <div className="max-w-4xl">
-          <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight uppercase">
+          <h2 className="text-5xl sm:text-6xl md:text-8xl font-semibold mb-6 leading-tight uppercase font-primary">
             Building Worlds <br /> That Inspire
           </h2>
 
-          <p className="max-w-xl mb-12 text-base sm:text-lg md:text-xl leading-relaxed">
+          <p className="max-w-xl mb-12 text-base sm:text-lg md:text-xl leading-relaxed font-secondary">
             Founded in 2004 and headquartered in Singapore with over <br />
             4200 employees across 25 offices in Asia, Europe, and North <br />
             America, Virtuos is one of the largest independent video game <br />
@@ -41,7 +41,7 @@ const About = () => {
           </p>
 
           {/* Stats Section */}
-          <div className="mt-12 flex flex-wrap justify-between max-w-3xl gap-4">
+          <div className="mt-12 flex flex-wrap justify-between max-w-3xl gap-4 font-primary bg-red-500 m-auto p-4">
             <div className="text-center">
               <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-orange-500">
                 4200+
