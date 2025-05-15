@@ -1,6 +1,5 @@
-import React from 'react';
 import dinasor from '../assets/images/dinasor.jpg';
-import homeoverlay from '../assets/images/home-hero-btm-overLay.webp';
+import homeoverlay from '../assets/images/home-hero-btm-overlay.webp';
 
 const About = () => {
   return (
