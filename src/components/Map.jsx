@@ -158,7 +158,7 @@ const Map = () => {
                       strokeWidth={0.5}
                       style={{
                         default: { outline: 'none' },
-                        hover: { fill: 'rgba(15, 23, 42, 0.7)' },
+                        hover: { fill: 'rgb(90, 155, 175)' },
                       }}
                     />
                   ))
