@@ -14,6 +14,7 @@ import Projects from '../components/Projects';
 import Partners from '../components/Partners';
 import News from '../components/News';
 import Carear from '../components/Carear';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -95,6 +96,7 @@ const Home = () => {
       <Partners />
       <News />
       <Carear/>
+      <Footer />
     </>
   );
 };
