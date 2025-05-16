@@ -76,11 +76,11 @@ const Map = () => {
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-semibold mb-4 md:mb-6 text-center uppercase font-primary">
           GLOBAL PRESENCE
         </h1>
-        <p className="mb-6 md:mb-12 text-sm sm:text-base md:text-lg text-center font-secondary">
-          Access our distributed network of studios and tap into our global talent and expertise. 
-          We help improve development efficiency, cost and time-to-market, so you can stay focused 
-          on building better games.
-        </p>
+       <p className="mx-auto mb-6 md:mb-12 text-sm sm:text-base md:text-lg text-center font-secondary px-4 max-w-3xl">
+  Access our distributed network of studios and tap into our global talent and expertise. 
+  We help improve development efficiency, cost and time-to-market, so you can stay focused 
+  on building better games.
+</p>
 
         <div className="flex justify-center gap-6 mb-12 text-lg font-secondary">
           {Object.keys(regionConfigs).map((region, index) => (
@@ -98,15 +98,15 @@ const Map = () => {
           ))}
         </div>
 
-        <div
-          className="border-2 border-gray-700 rounded-3xl overflow-hidden relative"
-          style={{
-            backgroundImage: `url(${mapImg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            minHeight: '700px'
-          }}
-        >
+      <div
+  className="rounded-3xl overflow-hidden relative border-0 lg:border-2 lg:border-gray-700"
+  style={{
+    backgroundImage: `url(${mapImg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    minHeight: '700px'
+  }}
+>
           <div className="absolute inset-0">
             <ComposableMap
               projection="geoMercator"
@@ -147,17 +147,17 @@ const Map = () => {
                     onMouseLeave={() => setHoveredStudio(null)}
                   >
                     {hoveredStudio === studio.name && (
-                      <circle r={16} fill="#DC7D28" fillOpacity="0.2" />
+                      <circle r={6} fill="#DC7D28" fillOpacity="0.6" />
                     )}
                     <circle
-                      r={12}
+                      r={15}
                       fill="#DC7D28"
                       fillOpacity={hoveredStudio === studio.name ? "0.4" : "0.2"}
                       style={{ animation: 'shine 2s infinite' }}
                     />
                     <circle
                       r={8}
-                      fill="#e7e9ee"
+                      fill="#EABE65"
                       stroke="#DC7D28"
                       strokeWidth={1.5}
                       style={{
