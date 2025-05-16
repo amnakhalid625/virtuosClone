@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Partners = () => {
-  // Array of partner logo URLs extracted from the provided HTML
   const partnerLogos = [
     'https://www.virtuosgames.com/wp-content/uploads/2024/08/ea.webp',
     'https://www.virtuosgames.com/wp-content/uploads/2024/08/eidos-montreal.webp',
