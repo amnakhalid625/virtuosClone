@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Partners = () => {
-  // Arrays of partner logo URLs extracted from the provided HTML
+  const [isHovered, setIsHovered] = useState(false);
+  
+  // Arrays of partner logo URLs
   const partnerLogos1 = [
     'https://www.virtuosgames.com/wp-content/uploads/2024/08/ea.webp',
     'https://www.virtuosgames.com/wp-content/uploads/2024/08/eidos-montreal.webp',
@@ -36,108 +38,144 @@ const Partners = () => {
     '/wp-content/uploads/2024/11/zynga.png',
   ];
 
+  // Create duplicated arrays for seamless looping
+  const duplicatedLogos1 = [...partnerLogos1, ...partnerLogos1];
+  const duplicatedLogos2 = [...partnerLogos2, ...partnerLogos2];
+
   return (
-    <div className="bg-[#25282A] py-40 px-0" style={{ '--padding-top': '40px', '--padding-bottom': '100px' }}>
-      <div className="max-w-[1280px] mx-auto flex flex-row flex-wrap justify-center">
-        {/* First Marquee Row */}
-        <div className="middle-service-marquee overflow-hidden relative w-full" id="middle-service-marquee">
-          <div className="item-wrap flex gap-4" style={{ width: '400%', transform: 'translateX(0px)', whiteSpace: 'nowrap' }}>
-            {partnerLogos1.concat(partnerLogos1).map((logo, index) => (
-              <div key={`row1-${index}`} className="item flex-1 flex justify-center items-center">
+    <section className="bg-[#25282A] py-28 px-0 relative overflow-hidden w-full">
+      <div className="w-full mx-auto px-4">
+        {/* First Marquee Row - Scrolls Left */}
+        <div 
+          className="marquee-container overflow-hidden relative w-full mb-8"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div 
+            className="marquee-content flex items-center py-4"
+            style={{ 
+              animationPlayState: isHovered ? 'paused' : 'running',
+            }}
+          >
+            {duplicatedLogos1.map((logo, index) => (
+              <div 
+                key={`row1-${index}`} 
+                className="marquee-item mx-4 md:mx-6 transition-all duration-300 hover:scale-110 hover:brightness-125 flex-shrink-0"
+                style={{ width: '120px' }}
+              >
                 <img
                   decoding="async"
                   src={logo}
                   alt={`Partner ${index + 1}`}
-                  className="w-full h-[100px] object-contain transition-opacity duration-500"
+                  className="w-full h-auto max-h-[100px] object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             ))}
           </div>
-          <div className="before:block before:absolute before:left-0 before:top-0 before:w-[100px] before:h-full before:bg-gradient-to-r from-[#25282A] via-[#25282A]/80 to-transparent before:z-10"></div>
-          <div className="after:block after:absolute after:right-0 after:top-0 after:w-[100px] after:h-full after:bg-gradient-to-l from-transparent via-[#25282A]/80 to-[#25282A] after:z-10"></div>
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#25282A] to-transparent z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#25282A] to-transparent z-10"></div>
         </div>
 
-        {/* Second Marquee Row */}
-        <div className="middle-service-marquee overflow-hidden relative w-full mt-8" id="middle-service-marquee-2">
-          <div className="item-wrap flex gap-4" style={{ width: '400%', transform: 'translateX(0px)', whiteSpace: 'nowrap' }}>
-            {partnerLogos2.concat(partnerLogos2).map((logo, index) => (
-              <div key={`row2-${index}`} className="item flex-1 flex justify-center items-center">
+        {/* Second Marquee Row - Scrolls Right */}
+        <div 
+          className="marquee-container overflow-hidden relative w-full"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div 
+            className="marquee-content flex items-center py-4 marquee-right"
+            style={{ 
+              animationPlayState: isHovered ? 'paused' : 'running',
+            }}
+          >
+            {duplicatedLogos2.map((logo, index) => (
+              <div 
+                key={`row2-${index}`} 
+                className="marquee-item mx-4 md:mx-6 transition-all duration-300 hover:scale-110 hover:brightness-125 flex-shrink-0"
+                style={{ width: '120px' }}
+              >
                 <img
                   decoding="async"
                   src={`https://www.virtuosgames.com${logo}`}
                   alt={`Partner ${index + 15}`}
-                  className="w-full h-[100px] object-contain transition-opacity duration-500"
+                  className="w-full h-auto max-h-[100px] object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             ))}
           </div>
-          <div className="before:block before:absolute before:left-0 before:top-0 before:w-[100px] before:h-full before:bg-gradient-to-r from-[#25282A] via-[#25282A]/80 to-transparent before:z-10"></div>
-          <div className="after:block after:absolute after:right-0 after:top-0 after:w-[100px] after:h-full after:bg-gradient-to-l from-transparent via-[#25282A]/80 to-[#25282A] after:z-10"></div>
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#25282A] to-transparent z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#25282A] to-transparent z-10"></div>
         </div>
       </div>
 
       {/* CSS for Animations */}
       <style jsx>{`
-        .middle-service-marquee {
-          padding-bottom: 0;
+        .marquee-container {
           position: relative;
+          width: 100%;
         }
 
-        .item-wrap {
-          position: relative;
-          animation: marquee 30s ease-in-out infinite;
+        .marquee-content {
+          display: flex;
+          width: max-content;
+          animation: marquee 60s linear infinite;
         }
 
-        #middle-service-marquee .item-wrap {
-          animation-name: marquee-left;
+        .marquee-right {
+          animation: marquee-right 30s linear infinite;
         }
 
-        #middle-service-marquee-2 .item-wrap {
-          animation-name: marquee-right;
-        }
-
-        @keyframes marquee-left {
+        @keyframes marquee {
           0% {
-            transform: translateX(0%);
+            transform: translateX(0);
           }
           100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
           }
         }
 
         @keyframes marquee-right {
           0% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
           }
           100% {
-            transform: translateX(0%);
+            transform: translateX(0);
           }
         }
 
-        @media only screen and (max-width: 1024px) {
-          .middle-service-marquee .item-wrap {
-            width: 600%;
+        .marquee-item {
+          flex: 0 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+          .marquee-item {
+            width: 100px !important;
+            margin: 0 4px !important;
           }
-          .middle-service-marquee .before,
-          .middle-service-marquee .after {
-            width: 50px;
+          .marquee-content {
+            animation-duration: 25s;
           }
         }
 
-        @media only screen and (max-width: 767px) {
-          .middle-service-marquee .item-wrap {
-            width: 550%;
+        @media (max-width: 768px) {
+          .marquee-item {
+            width: 80px !important;
+          }
+          .marquee-content {
+            animation-duration: 20s;
           }
         }
 
-        @media only screen and (max-width: 480px) {
-          .middle-service-marquee .item-wrap {
-            width: 800%;
-            gap: 40px;
+        @media (max-width: 480px) {
+          .marquee-item {
+            width: 70px !important;
+          }
+          .marquee-content {
+            animation-duration: 15s;
           }
         }
       `}</style>
-    </div>
+    </section>
   );
 };
 
