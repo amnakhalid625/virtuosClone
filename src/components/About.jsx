@@ -21,7 +21,7 @@ const About = () => {
       {/* Content */}
       <div className="relative z-10 flex items-center justify-start min-h-screen px-4 md:px-6 lg:min-h-[200vh] bg-black bg-opacity-40">
         <div className="w-full max-w-6xl mx-auto md:mx-4 md:ml-20 pt-20 md:pt-0 md:mt-[-400px]">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-semibold mb-4 md:mb-6 leading-tight uppercase font-primary">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold mb-4 md:mb-6 leading-tight uppercase font-primary">
             Building Worlds <br /> That Inspire
           </h2>
 
