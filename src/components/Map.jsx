@@ -76,7 +76,7 @@ const Map = () => {
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-semibold mb-4 md:mb-6 text-center uppercase font-primary">
           GLOBAL PRESENCE
         </h1>
-       <p className="mx-auto mb-6 md:mb-12 text-sm sm:text-base md:text-lg text-center font-secondary px-4 max-w-3xl">
+       <p className="mx-auto mb-6 md:mb-12 text-sm sm:text-base md:text-lg text-center font-secondary px-4 max-w-3xl py-8">
   Access our distributed network of studios and tap into our global talent and expertise. 
   We help improve development efficiency, cost and time-to-market, so you can stay focused 
   on building better games.

@@ -10,6 +10,8 @@ import About from '../components/About';
 import { Video } from '../components/Video';
 import Map from '../components/Map';
 import Services from '../components/Services';
+import Projects from '../components/Projects';
+import Partners from '../components/Partners';
 
 const Home = () => {
   return (
@@ -90,6 +92,8 @@ const Home = () => {
       <Video />
       <Map />
       <Services />
+      <Projects />
+      <Partners />
     </>
   );
 };
