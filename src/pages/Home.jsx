@@ -13,6 +13,7 @@ import Services from '../components/Services';
 import Projects from '../components/Projects';
 import Partners from '../components/Partners';
 import News from '../components/News';
+import Carear from '../components/Carear';
 
 const Home = () => {
   return (
@@ -96,6 +97,7 @@ const Home = () => {
       <Projects />
       <Partners />
       <News />
+      <Carear/>
     </>
   );
 };
