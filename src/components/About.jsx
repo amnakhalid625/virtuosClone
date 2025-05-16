@@ -21,9 +21,9 @@ const About = () => {
       {/* Content */}
       <div className="relative z-10 flex items-center justify-start min-h-screen px-4 md:px-6 lg:min-h-[200vh] bg-black bg-opacity-40">
         <div className="w-full max-w-6xl mx-auto md:mx-4 md:ml-20 pt-20 md:pt-0 md:mt-[-400px]">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold mb-4 md:mb-6 leading-tight uppercase font-primary">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold mb-4 md:mb-6 leading-tight uppercase font-primary">
             Building Worlds <br /> That Inspire
-          </h2>
+          </h1>
 
           <p className="w-full max-w-xl mb-6 md:mb-12 text-sm sm:text-base md:text-lg leading-relaxed font-secondary">
             Founded in 2004 and headquartered in Singapore with over{' '}
