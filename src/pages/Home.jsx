@@ -26,7 +26,7 @@ const Home = () => {
         <div className="absolute inset-0">
           {/* Desktop Background */}
           <div 
-            className="hidden md:block h-full w-full bg-cover bg-center"
+            className="hidden md:block h-full w-full bg-cover bg-center "
             style={{ backgroundImage: `url(${homeBg})` }}
           ></div>
           {/* Mobile Background */}
@@ -45,17 +45,16 @@ const Home = () => {
           alt="tank"
           className="absolute z-40 
                     left-1/2 transform -translate-x-1/2 
-                    top-[30%] md:top-1/3 md:bottom-[35%] 
-                    w-[150px] md:w-[200px] 
-                    md:right-[13%] md:left-auto"
+                    top-[25%] sm:top-[30%] md:top-1/3 md:bottom-[35%] 
+                    w-[40vw] max-w-[200px] 
+                    md:right-[13%] md:left-auto md:w-[200px]"
         />
 
-        <div className="absolute inset-0 flex items-center justify-center z-30">
+        <div className="absolute inset-0 flex items-center justify-center z-30 ">
           <img
             src={textImg}
             alt="WE MAKE GAMES BETTER TOGETHER"
-            className="w-[80%] max-w-[450px] md:w-[450px] 
-                      mt-40 md:mt-0 "  
+            className="w-[90%] max-w-[400px] md:max-w-[480px] mt-40 md:mt-16 "  
           />
         </div>
 
@@ -87,8 +86,6 @@ const Home = () => {
           />
         </div>
       </div>
-
-
 
       <About />
       <Video />

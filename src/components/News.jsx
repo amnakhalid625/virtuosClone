@@ -3,8 +3,6 @@ import men1 from '../assets/images/men1.jpg';
 import men2 from '../assets/images/men2.jpg';
 import men3 from '../assets/images/men3.jpg';
 
-
-
 const News = () => {
   const newsItems = [
     {
@@ -19,22 +17,34 @@ const News = () => {
     },
     {
       date: 'APRIL 15, 2025',
-      headline: 'South Korea\'s role in Virtuos\' 4200-member operating model - Sean Yoon interview',
+      headline: "South Korea's role in Virtuos' 4200-member operating model - Sean Yoon interview",
       image: men3
     },
   ];
 
   return (
-    <div className="bg-[#25282A] py-28 px-4">
+    <div className="bg-[#25282A] py-20 px-4 sm:px-6 lg:px-12">
       <div className="max-w-[1280px] mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-semibold mb-4 md:mb-10 text-center uppercase font-primary text-white ">Latest News</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold mb-10 text-center uppercase font-primary text-white leading-tight">
+          Latest News
+        </h1>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {newsItems.map((item, index) => (
-            <div key={index} className="rounded-3xl overflow-hidden shadow-lg">
-              <img src={item.image} alt={item.headline} className="w-full h-80 object-cover" />
-              <div className="p-4">
-                <p className="text-gray-400 text-sm font-secondary">{item.date}</p>
-                <h3 className="text-white text-lg font-semibold mb-2 font-secondary py-2">{item.headline}</h3>
+            <div
+              key={index}
+              className="rounded-3xl overflow-hidden shadow-lg bg-[#1e1f20] transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src={item.image}
+                alt={item.headline}
+                className="w-full h-64 sm:h-72 md:h-80 object-cover"
+              />
+              <div className="p-5">
+                <p className="text-gray-400 text-xs sm:text-sm font-secondary mb-2">{item.date}</p>
+                <h3 className="text-white text-base sm:text-lg font-semibold font-secondary leading-snug">
+                  {item.headline}
+                </h3>
               </div>
             </div>
           ))}

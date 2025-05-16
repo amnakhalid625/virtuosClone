@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
-import logoImg from '../assets/images/logo.webp'
+import logoImg from '../assets/images/logo.webp';
+import menuIcon from '../assets/images/menuImg.webp'; // Your local menu image
 
 const Navbar = () => {
   const [langOpen, setLangOpen] = useState(false);
 
   return (
-<header className="w-full px-6 py-5 flex justify-between items-center flex-wrap bg-transparent font-secondary absolute top-0 left-0 z-50 text-white">
+    <header className="w-full px-6 py-4 md:py-6 flex justify-between items-center flex-wrap bg-transparent font-secondary absolute top-0 left-0 z-50 text-white">
+      
       {/* Menu Button */}
-      <div className="flex items-center">
-        <button className="w-10 h-10">
+      <div className="flex items-center gap-2">
+        <button className="w-8 h-8 md:w-10 md:h-10">
           <img
-            src="https://www.virtuosgames.com/wp-content/uploads/2024/07/menu@2x.webp"
+            src={menuIcon}
             alt="Menu"
             className="w-full h-full object-contain"
           />
         </button>
-        <span className="ml-2 font-medium">MENU</span>
+        <span className="text-sm md:text-base font-semibold tracking-wide uppercase text-white">
+          Menu
+        </span>
       </div>
 
       {/* Center Logo */}
@@ -24,21 +28,21 @@ const Navbar = () => {
           <img
             src={logoImg}
             alt="Virtuos Logo"
-            className="h-10 md:h-14 object-contain"
+            className="h-8 md:h-14 object-contain"
           />
         </a>
       </div>
 
-      {/* Right-side Language Switcher + Contact Button */}
-      <div className="flex items-center gap-4">
+      {/* Right: Language Switch + Contact Button */}
+      <div className="flex items-center gap-4 text-sm md:text-base font-medium">
         {/* Language Switcher */}
         <div className="relative">
           <button
             onClick={() => setLangOpen(!langOpen)}
-            className="flex items-center space-x-1"
+            className="flex items-center gap-1 hover:text-[#FFC695] transition"
           >
-            <span>English</span>
-            <svg className="w-3 h-3" viewBox="0 0 320 512" fill="currentColor">
+            <span className="uppercase">English</span>
+            <svg className="w-3 h-3 fill-current" viewBox="0 0 320 512">
               <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 
               0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 
               33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 
@@ -48,7 +52,7 @@ const Navbar = () => {
             </svg>
           </button>
           {langOpen && (
-            <ul className="absolute right-0 mt-2 bg-white border rounded shadow text-sm z-50">
+            <ul className="absolute right-0 mt-2 bg-white border rounded shadow text-sm z-50 text-black">
               {[
                 ['Chinese', '/zh'],
                 ['Japanese', '/ja'],
@@ -59,7 +63,7 @@ const Navbar = () => {
                 <li key={path}>
                   <a
                     href={`https://www.virtuosgames.com${path}`}
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="block px-4 py-2 hover:bg-gray-100 transition"
                   >
                     {name}
                   </a>
@@ -68,15 +72,15 @@ const Navbar = () => {
             </ul>
           )}
         </div>
-<a
-  href="#"
-  className="text-[#FFC695] text-lg font-semibold px-[20px] py-[10px] rounded-none hover:opacity-60 hidden md:inline-block transition duration-300 uppercase"
-  style={{ textShadow: '0px 0px 20px #ffc695' }}
->
-  Contact Us
-</a>
 
-
+        {/* Contact Button */}
+        <a
+          href="#"
+          className="hidden md:inline-block text-[#FFC695] uppercase text-sm md:text-base font-semibold px-5 py-2 hover:opacity-75 transition tracking-wide"
+          style={{ textShadow: '0 0 12px #ffc695' }}
+        >
+          Contact Us
+        </a>
       </div>
     </header>
   );

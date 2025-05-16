@@ -32,45 +32,37 @@ import p23 from '../assets/images/p23.png';
 import p24 from '../assets/images/p24.png';
 import p25 from '../assets/images/p25.png';
 import p26 from '../assets/images/p26.png';
-import p27 from '../assets/images/p22.png';
-import p28 from '../assets/images/p23.png';
-import p29 from '../assets/images/p24.png';
-import p30 from '../assets/images/p25.png';
+
+const projects = [
+  { id: 1, title: 'The Callisto Protocol', studio: 'Omeda Studios', image: p1 },
+  { id: 2, title: "Marvel's Midnight Suns", studio: 'Firaxis Games', image: p2 },
+  { id: 3, title: 'Grounded', studio: 'Obsidian Entertainment', image: p3 },
+  { id: 4, title: 'Life Rendered', studio: 'Life Rendered', image: p4 },
+  { id: 5, title: 'CrossfireX', studio: 'Smilegate, Remedy Entertainment', image: p5 },
+  { id: 6, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p6 },
+  { id: 7, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p7 },
+  { id: 8, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p8 },
+  { id: 9, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p9 },
+  { id: 10, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p10 },
+  { id: 11, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p11 },
+  { id: 12, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p12 },
+  { id: 13, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p13 },
+  { id: 14, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p14 },
+  { id: 15, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p15 },
+  { id: 16, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p16 },
+  { id: 17, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p17 },
+  { id: 18, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p18 },
+  { id: 19, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p19 },
+  { id: 20, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p20 },
+  { id: 21, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p21 },
+  { id: 22, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p22 },
+  { id: 23, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p23 },
+  { id: 24, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p24 },
+  { id: 25, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p25 },
+  { id: 26, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p26 },
+];
 
 const Projects = () => {
-  const projects = [
-    { id: 1, title: 'The Callisto Protocol', studio: 'Omeda Studios', image: p1 },
-    { id: 2, title: "Marvel's Midnight Suns", studio: 'Firaxis Games', image: p2 },
-    { id: 3, title: 'Grounded', studio: 'Obsidian Entertainment', image: p3 },
-    { id: 4, title: 'Life Rendered', studio: 'Life Rendered', image: p4 },
-    { id: 5, title: 'CrossfireX', studio: 'Smilegate, Remedy Entertainment', image: p5 },
-    { id: 6, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p6 },
-    { id: 7, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p7 },
-    { id: 8, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p8 },
-    { id: 9, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p9 },
-    { id: 10, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p10 },
-    { id: 11, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p11 },
-    { id: 12, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p12 },
-    { id: 13, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p13 },
-    { id: 14, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p14 },
-    { id: 15, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p15 },
-    { id: 16, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p16 },
-    { id: 17, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p17 },
-    { id: 18, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p18 },
-    { id: 19, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p19 },
-    { id: 20, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p20 },
-    { id: 21, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p21 },
-    { id: 22, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p22 },
-    { id: 23, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p23 },
-    { id: 24, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p24 },
-    { id: 25, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p25 },
-    { id: 26, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p26 },
-    { id: 27, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p15 },
-    { id: 28, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p7 },
-    { id: 29, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p25 },
-    { id: 30, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p4 },
-  ];
-
   return (
     <div
       className="w-full bg-gray-900 text-white py-28"
@@ -81,71 +73,60 @@ const Projects = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Main Title Section */}
-      <div className="container mx-auto px-4 mb-12 text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-semibold mb-4 md:mb-6 text-center uppercase font-primary">Excellence in Every Project</h1>
-        <div className="max-w-3xl mx-auto">
-          <p className="mx-auto mb-6 md:mb-12 text-sm sm:text-base md:text-lg text-center font-secondary px-4 max-w-3xl py-8">
-           We have built a legacy of creating critically acclaimed, award-winning games and setting new standards in development.
-From developing concepts, all the way to remaking classic titles — we’ve done it all.
-          </p>
-        </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 text-center uppercase font-primary">Excellence in Every Project</h1>
+        <p className="mx-auto mb-6 md:mb-12 text-base sm:text-lg md:text-xl text-center font-secondary px-4 max-w-3xl">
+          We have built a legacy of creating critically acclaimed, award-winning games and setting new standards in development. From developing concepts, all the way to remaking classic titles — we’ve done it all.
+        </p>
       </div>
 
-      {/* Projects Slider */}
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <Swiper
           modules={[Autoplay, Navigation]}
           spaceBetween={20}
           slidesPerView={1}
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-          }}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
           breakpoints={{
+            320: { slidesPerView: 1 },
+            480: { slidesPerView: 1.2 },
             640: { slidesPerView: 2 },
+            768: { slidesPerView: 2.5 },
             1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 5 },
+            1280: { slidesPerView: 4 },
+            1536: { slidesPerView: 5 },
           }}
           className="mb-12"
         >
           {projects.map((project) => (
             <SwiperSlide key={project.id}>
               <div className="flex justify-center">
-               <div className="relative h-[420px] w-[300px] group cursor-pointer overflow-hidden rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-  <img
-    src={project.image}
-    alt={project.title}
-    className="w-full h-full object-cover brightness-75 transition-transform duration-500 group-hover:scale-110"
-  />
-  <div className="absolute inset-x-0 bottom-0 h-1/2 z-10 bg-gradient-to-t from-[#04526b]/60 to-transparent" />
-  
-  <div className="absolute bottom-0 left-0 p-6 z-20 w-full transition-all duration-500 group-hover:translate-y-[-10px]">
-    <h3 className="text-xl font-bold mb-1 transition-opacity duration-300 group-hover:opacity-100">
-      {project.title}
-    </h3>
-    <p className="text-sm text-gray-300 transition-opacity duration-500 group-hover:opacity-90">
-      {project.studio}
-    </p>
-  </div>
-  
-  <div className="absolute right-6 bottom-6 z-20 opacity-0 translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
-    <div className="bg-orange-500 p-3 rounded-full shadow-md hover:bg-orange-600 transition-colors">
-      <ArrowRight size={20} />
-    </div>
-  </div>
-</div>
-
+                <div className="relative h-[360px] sm:h-[400px] md:h-[420px] w-[90%] sm:w-[280px] md:w-[300px] group cursor-pointer overflow-hidden rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover brightness-75 transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-1/2 z-10 bg-gradient-to-t from-[#04526b]/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-4 md:p-6 z-20 w-full transition-all duration-500 group-hover:translate-y-[-10px]">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 font-secondary group-hover:opacity-100">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-300 font-secondary group-hover:opacity-90">
+                      {project.studio}
+                    </p>
+                  </div>
+                  <div className="absolute right-4 bottom-4 z-20 opacity-0 translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                    <div className="bg-orange-500 p-2 sm:p-3 rounded-full shadow-md hover:bg-orange-600 transition-colors">
+                      <ArrowRight size={18} />
+                    </div>
+                  </div>
+                </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* Custom Navigation Dots */}
         <div className="flex justify-center items-center space-x-2 mt-10">
           {[...Array(5)].map((_, index) => (
             <div key={index} className={`h-2 rounded-full ${index === 0 ? 'w-8 bg-orange-500' : 'w-2 bg-gray-600'}`}></div>

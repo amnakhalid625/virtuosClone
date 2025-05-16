@@ -20,7 +20,6 @@ const regionConfigs = {
     scale: 120,
     center: [20, 30],
     studios: [
-      // NORTH AMERICA
       { name: "Vancouver", coordinates: [-123.1207, 49.2827], region: "NORTH AMERICA", country: "Canada" },
       { name: "Seattle", coordinates: [-122.3321, 47.6062], region: "NORTH AMERICA", country: "United States" },
       { name: "San Francisco", coordinates: [-122.4194, 37.7749], region: "NORTH AMERICA", country: "United States" },
@@ -29,14 +28,12 @@ const regionConfigs = {
       { name: "Chicago", coordinates: [-87.6298, 41.8781], region: "NORTH AMERICA", country: "United States" },
       { name: "New York", coordinates: [-74.0060, 40.7128], region: "NORTH AMERICA", country: "United States" },
       { name: "Montreal", coordinates: [-73.5674, 45.5017], region: "NORTH AMERICA", country: "Canada" },
-      // EUROPE
       { name: "London", coordinates: [-0.1278, 51.5074], region: "EUROPE", country: "United Kingdom" },
       { name: "Paris", coordinates: [2.3522, 48.8566], region: "EUROPE", country: "France" },
       { name: "Berlin", coordinates: [13.4050, 52.5200], region: "EUROPE", country: "Germany" },
       { name: "Stockholm", coordinates: [18.0686, 59.3293], region: "EUROPE", country: "Sweden" },
       { name: "Barcelona", coordinates: [2.1734, 41.3851], region: "EUROPE", country: "Spain" },
       { name: "Amsterdam", coordinates: [4.8952, 52.3702], region: "EUROPE", country: "Netherlands" },
-      // ASIA
       { name: "Tokyo", coordinates: [139.6917, 35.6895], region: "ASIA", country: "Japan" },
       { name: "Seoul", coordinates: [126.9780, 37.5665], region: "ASIA", country: "South Korea" },
       { name: "Shanghai", coordinates: [121.4737, 31.2304], region: "ASIA", country: "China" },
@@ -48,65 +45,72 @@ const regionConfigs = {
   'NORTH AMERICA': {
     scale: 300,
     center: [-100, 40],
-    studios: [ /* same as above */ ]
+    studios: [] // Add filtered studios if needed
   },
   'EUROPE': {
     scale: 400,
     center: [15, 50],
-    studios: [ /* same as above */ ]
+    studios: []
   },
   'ASIA': {
     scale: 300,
     center: [100, 30],
-    studios: [ /* same as above */ ]
+    studios: []
   }
 };
 
 const Map = () => {
   const [activeRegion, setActiveRegion] = useState('ALL');
   const [hoveredStudio, setHoveredStudio] = useState(null);
+
   const currentConfig = regionConfigs[activeRegion];
-  const studioCountries = currentConfig.studios.map(studio => studio.country);
+  const studioCountries = currentConfig.studios.map((studio) => studio.country);
 
   return (
-    <div className="bg-[#25282A] text-white min-h-[120vh] py-16 px-4">
+    <div className="bg-[#25282A] text-white py-16 px-4">
       <style>{shineAnimation}</style>
 
-      <div className="max-w-8xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-semibold mb-4 md:mb-6 text-center uppercase font-primary">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-center uppercase font-primary">
           GLOBAL PRESENCE
         </h1>
-       <p className="mx-auto mb-6 md:mb-12 text-sm sm:text-base md:text-lg text-center font-secondary px-4 max-w-3xl py-8">
-  Access our distributed network of studios and tap into our global talent and expertise. 
-  We help improve development efficiency, cost and time-to-market, so you can stay focused 
-  on building better games.
-</p>
+        <p className="text-sm sm:text-base md:text-lg text-center max-w-3xl mx-auto font-secondary mb-10 px-4">
+          Access our distributed network of studios and tap into our global talent and expertise.
+          We help improve development efficiency, cost and time-to-market, so you can stay focused
+          on building better games.
+        </p>
 
-        <div className="flex justify-center gap-6 mb-12 text-lg font-secondary">
-          {Object.keys(regionConfigs).map((region, index) => (
+        {/* Region Tabs */}
+        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-5 mb-10 text-base sm:text-lg font-secondary">
+          {Object.keys(regionConfigs).map((region, idx) => (
             <React.Fragment key={region}>
               <button
-                className={`${activeRegion === region ? 'text-white font-bold' : 'text-gray-400'}`}
+                className={`${
+                  activeRegion === region
+                    ? 'text-white font-bold underline underline-offset-4'
+                    : 'text-gray-400'
+                } transition duration-200`}
                 onClick={() => setActiveRegion(region)}
               >
                 {region}
               </button>
-              {index < Object.keys(regionConfigs).length - 1 && (
-                <span className="text-gray-500">/</span>
+              {idx < Object.keys(regionConfigs).length - 1 && (
+                <span className="text-gray-500 hidden sm:inline">/</span>
               )}
             </React.Fragment>
           ))}
         </div>
 
-      <div
-  className="rounded-3xl overflow-hidden relative border-0 lg:border-2 lg:border-gray-700"
-  style={{
-    backgroundImage: `url(${mapImg})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    minHeight: '700px'
-  }}
->
+        {/* Map Container */}
+        <div
+          className="relative rounded-3xl overflow-hidden border-0 lg:border-2 border-gray-700"
+          style={{
+            backgroundImage: `url(${mapImg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            minHeight: '600px'
+          }}
+        >
           <div className="absolute inset-0">
             <ComposableMap
               projection="geoMercator"
@@ -175,7 +179,7 @@ const Map = () => {
 
           <ReactTooltip
             id="studio-tooltip"
-            className="!bg-black !text-white !px-3 !py-2 !rounded-md"
+            className="!bg-[#25282A] !text-white !px-3 !py-2 !rounded-md"
             place="top"
           />
         </div>
