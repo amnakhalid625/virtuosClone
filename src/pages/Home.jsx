@@ -9,6 +9,7 @@ import smokeSecondImg from '../assets/images/smokeRight.webp';
 import About from '../components/About';
 import { Video } from '../components/Video';
 import Map from '../components/Map';
+import Services from '../components/Services';
 
 const Home = () => {
   return (
@@ -88,6 +89,7 @@ const Home = () => {
       <About />
       <Video />
       <Map />
+      <Services />
     </>
   );
 };
