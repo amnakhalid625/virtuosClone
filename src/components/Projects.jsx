@@ -1,140 +1,154 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
-import { Autoplay, Navigation } from 'swiper/modules';
-import { ArrowRight } from 'lucide-react';
-import projectbgImg from '../assets/images/projectbg.webp';
-import p1 from '../assets/images/p1.png';
-import p2 from '../assets/images/p2.png';
-import p3 from '../assets/images/p3.png';
-import p4 from '../assets/images/p4.png';
-import p5 from '../assets/images/p5.jpg';
-import p6 from '../assets/images/p6.png';
-import p7 from '../assets/images/p7.png';
-import p8 from '../assets/images/p8.jpg';
-import p9 from '../assets/images/p9.jpg';
-import p10 from '../assets/images/p10.jpg';
-import p11 from '../assets/images/p11.png';
-import p12 from '../assets/images/p12.png';
-import p13 from '../assets/images/p13.png';
-import p14 from '../assets/images/p14.png';
-import p15 from '../assets/images/p15.jpg';
-import p16 from '../assets/images/p16.png';
-import p17 from '../assets/images/p17.png';
-import p18 from '../assets/images/p18.png';
-import p19 from '../assets/images/p19.jpg';
-import p20 from '../assets/images/p20.webp';
-import p21 from '../assets/images/p21.png';
-import p22 from '../assets/images/p22.png';
-import p23 from '../assets/images/p23.png';
-import p24 from '../assets/images/p24.png';
-import p25 from '../assets/images/p25.png';
-import p26 from '../assets/images/p26.png';
+import React, { useState, useEffect } from 'react';
+import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import logoImg from '../assets/images/logo.webp';
+import menuIcon from '../assets/images/menuImg.webp';
+import bgImg from '../assets/images/menuBg.webp';
+// Import your hover background images
+import aboutBg from '../assets/images/about-bg.webp';
+import servicesBg from '../assets/images/services-bg.webp';
+import worksBg from '../assets/images/works-bg.webp';
+import careersBg from '../assets/images/menuBg.webp';
+import newsBg from '../assets/images/news-bg.webp';
+import eventsBg from '../assets/images/events-bg.webp';
+import contactBg from '../assets/images/menuBg.webp';
 
-const projects = [
-  { id: 1, title: 'The Callisto Protocol', studio: 'Omeda Studios', image: p1 },
-  { id: 2, title: "Marvel's Midnight Suns", studio: 'Firaxis Games', image: p2 },
-  { id: 3, title: 'Grounded', studio: 'Obsidian Entertainment', image: p3 },
-  { id: 4, title: 'Life Rendered', studio: 'Life Rendered', image: p4 },
-  { id: 5, title: 'CrossfireX', studio: 'Smilegate, Remedy Entertainment', image: p5 },
-  { id: 6, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p6 },
-  { id: 7, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p7 },
-  { id: 8, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p8 },
-  { id: 9, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p9 },
-  { id: 10, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p10 },
-  { id: 11, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p11 },
-  { id: 12, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p12 },
-  { id: 13, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p13 },
-  { id: 14, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p14 },
-  { id: 15, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p15 },
-  { id: 16, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p16 },
-  { id: 17, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p17 },
-  { id: 18, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p18 },
-  { id: 19, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p19 },
-  { id: 20, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p20 },
-  { id: 21, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p21 },
-  { id: 22, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p22 },
-  { id: 23, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p23 },
-  { id: 24, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p24 },
-  { id: 25, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p25 },
-  { id: 26, title: 'PUBG: New State', studio: 'Developer: KRAFTON', image: p26 },
-];
+const Navbar = () => {
+  const [langOpen, setLangOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [currentBg, setCurrentBg] = useState(bgImg);
+  const [hoverTimeout, setHoverTimeout] = useState(null);
 
-const Projects = () => {
+  // Preload all background images
+  useEffect(() => {
+    const images = [aboutBg, servicesBg, worksBg, careersBg, newsBg, eventsBg, contactBg];
+    images.forEach(img => {
+      new Image().src = img;
+    });
+  }, []);
+
+  const menuItems = [
+    { title: 'About Us', bg: aboutBg },
+    { title: 'Our Services', bg: servicesBg },
+    { title: 'Our Works', bg: worksBg },
+    { title: 'Careers', bg: careersBg },
+    { title: 'News', bg: newsBg },
+    { title: 'Events', bg: eventsBg },
+    { title: 'Contact Us', bg: contactBg }
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, url: '#' },
+    { icon: Instagram, url: '#' },
+    { icon: Linkedin, url: '#' },
+    { icon: Youtube, url: '#' }
+  ];
+
+  const handleMouseEnter = (bg) => {
+    if (hoverTimeout) clearTimeout(hoverTimeout);
+    setCurrentBg(bg);
+  };
+
+  const handleMouseLeave = () => {
+    // Add a small delay before reverting to prevent flickering
+    const timeout = setTimeout(() => {
+      setCurrentBg(bgImg);
+    }, 100);
+    setHoverTimeout(timeout);
+  };
+
   return (
-    <div
-      className="w-full bg-gray-900 text-white py-28"
-      style={{
-        backgroundImage: `url(${projectbgImg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 text-center uppercase font-primary">Excellence in Every Project</h1>
-        <p className="mx-auto mb-6 md:mb-12 text-base sm:text-lg md:text-xl text-center font-secondary px-4 max-w-3xl">
-          We have built a legacy of creating critically acclaimed, award-winning games and setting new standards in development. From developing concepts, all the way to remaking classic titles — we’ve done it all.
-        </p>
-      </div>
+    <>
+      <header className="w-full px-6 py-4 md:py-6 flex justify-between items-center flex-wrap bg-transparent font-secondary absolute top-0 left-0 z-50 text-white">
+        {/* ... (keep your existing header code) ... */}
+      </header>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <Swiper
-          modules={[Autoplay, Navigation]}
-          spaceBetween={20}
-          slidesPerView={1}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
-          navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            480: { slidesPerView: 1.2 },
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 2.5 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 },
-            1536: { slidesPerView: 5 },
+      {/* Full-Screen Menu Panel */}
+      {menuOpen && (
+        <div
+          className="fixed top-0 left-0 w-full h-full z-[999] text-white overflow-hidden"
+          style={{
+            backgroundImage: `url(${currentBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            transition: 'background-image 0.3s ease-in-out'
           }}
-          className="mb-12"
         >
-          {projects.map((project) => (
-            <SwiperSlide key={project.id}>
-              <div className="flex justify-center">
-                <div className="relative h-[360px] sm:h-[400px] md:h-[420px] w-[90%] sm:w-[280px] md:w-[300px] group cursor-pointer overflow-hidden rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover brightness-75 transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 h-1/2 z-10 bg-gradient-to-t from-[#04526b]/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-4 md:p-6 z-20 w-full transition-all duration-500 group-hover:translate-y-[-10px]">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 font-secondary group-hover:opacity-100">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-300 font-secondary group-hover:opacity-90">
-                      {project.studio}
-                    </p>
-                  </div>
-                  <div className="absolute right-4 bottom-4 z-20 opacity-0 translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
-                    <div className="bg-orange-500 p-2 sm:p-3 rounded-full shadow-md hover:bg-orange-600 transition-colors">
-                      <ArrowRight size={18} />
-                    </div>
-                  </div>
+          {/* Close Button */}
+          <div className="absolute top-6 right-6 z-[1000]">
+            <button
+              onClick={() => {
+                setMenuOpen(false);
+                setCurrentBg(bgImg);
+              }}
+              className="text-4xl font-bold hover:text-[#FFC695] transition-colors duration-300"
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+          </div>
+
+          {/* Main Content Area */}
+          <div className="container mx-auto h-full flex flex-col">
+            {/* Logo at top center */}
+            <div className="flex justify-center pt-5">
+              <img
+                src={logoImg}
+                alt="Virtuos Logo"
+                className="h-16 w-auto transition-opacity hover:opacity-90"
+              />
+            </div>
+
+            {/* Menu Links */}
+            <div className="flex-grow flex items-start justify-start">
+              <nav className="w-full max-w-7xl mx-auto font-primary">
+                <ul className="space-y-6 md:space-y-8">
+                  {menuItems.map((item, index) => (
+                    <li key={index}>
+                      <a
+                        href={`#${item.title.toLowerCase().replace(' ', '-')}`}
+                        className="block text-2xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wider hover:text-[#FFC695] transition-colors duration-300"
+                        onMouseEnter={() => handleMouseEnter(item.bg)}
+                        onMouseLeave={handleMouseLeave}
+                        onFocus={() => handleMouseEnter(item.bg)}
+                        onBlur={handleMouseLeave}
+                        aria-label={item.title}
+                      >
+                        {item.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+
+            {/* Footer with social links */}
+            <div className="pb-10 px-6">
+              <div className="flex flex-col md:flex-row justify-end items-center gap-6">
+                <div className="flex gap-4">
+                  {socialLinks.map((social, index) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={index}
+                        href={social.url}
+                        className="text-white hover:text-[#FFC695] transition-colors"
+                        aria-label={Icon.displayName}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Icon className="w-5 h-5" />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <div className="flex justify-center items-center space-x-2 mt-10">
-          {[...Array(5)].map((_, index) => (
-            <div key={index} className={`h-2 rounded-full ${index === 0 ? 'w-8 bg-orange-500' : 'w-2 bg-gray-600'}`}></div>
-          ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
-export default Projects;
+export default Navbar;

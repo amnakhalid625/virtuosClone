@@ -155,13 +155,13 @@ const Map = () => {
                     )}
                     <circle
                       r={15}
-                      fill="#DC7D28"
+                      fill="#FFC695"
                       fillOpacity={hoveredStudio === studio.name ? "0.4" : "0.2"}
                       style={{ animation: 'shine 2s infinite' }}
                     />
                     <circle
                       r={8}
-                      fill="#EABE65"
+                      fill="#FFC695"
                       stroke="#DC7D28"
                       strokeWidth={1.5}
                       style={{
