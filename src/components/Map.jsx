@@ -101,7 +101,7 @@ const Map = () => {
           ))}
         </div>
 
-        {/* Map Container */}
+        {/* Map container */}
         <div
           className="relative rounded-3xl overflow-hidden border-0 lg:border-2 border-gray-700"
           style={{
