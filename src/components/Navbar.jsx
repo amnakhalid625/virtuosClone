@@ -40,7 +40,7 @@ const Navbar = () => {
           </span>
         </div>
 
-        {/* Center Logo */}
+        {/* Logo */}
         <div className="flex-grow flex justify-center">
           <a href="https://www.virtuosgames.com">
             <img src={logoImg} alt="Virtuos Logo" className="h-8 md:h-14 object-contain" />
