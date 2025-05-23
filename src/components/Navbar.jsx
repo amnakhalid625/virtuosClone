@@ -16,7 +16,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentBg, setCurrentBg] = useState(bgImg);
 
-  // Menu items with their corresponding background images
+  // Menu items and background images
   const menuItems = [
     { title: 'About Us', bg: aboutBg },
     { title: 'Our Services', bg: servicesBg },
