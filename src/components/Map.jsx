@@ -45,7 +45,7 @@ const regionConfigs = {
   'NORTH AMERICA': {
     scale: 300,
     center: [-100, 40],
-    studios: [] // Add filtered studios if needed
+    studios: [] 
   },
   'EUROPE': {
     scale: 400,
