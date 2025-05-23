@@ -49,7 +49,7 @@ const Navbar = () => {
 
         {/* Right Side */}
         <div className="flex items-center gap-4 text-sm md:text-base font-medium">
-          {/* Language Switch */}
+          {/* Languages */}
           <div className="relative">
             <button onClick={() => setLangOpen(!langOpen)} className="flex items-center gap-1 hover:text-[#FFC695] transition">
               <span className="uppercase">English</span>
