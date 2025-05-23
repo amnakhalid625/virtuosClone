@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logoImg from '../assets/images/logo.webp';
 import menuIcon from '../assets/images/menuImg.webp';
 import bgImg from '../assets/images/menuBg.webp';
-// Import your hover background images
+// hover background images
 import aboutBg from '../assets/images/about-bg.webp';
 import servicesBg from '../assets/images/services-bg.webp';
 import worksBg from '../assets/images/works-bg.webp';
